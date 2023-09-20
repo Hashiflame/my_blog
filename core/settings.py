@@ -14,8 +14,10 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+
 load_dotenv('.env')
 GMAIL_PASSWORD = os.getenv('GMAIL_PASSWORD')
+GMAIL_ID = os.getenv('GMAIL_ID')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -134,8 +136,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Конфигурация сервера электронной почты
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'hashiflame@gmail.com'
-EMAIL_HOST_PASSWORD = 'dwemesspiqbptvnc'
+EMAIL_HOST_USER = GMAIL_ID #your mail ID
+EMAIL_HOST_PASSWORD = GMAIL_PASSWORD #your token password
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
